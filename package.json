@@ -1,0 +1,28 @@
+{
+  "name": "req-cacher",
+  "version": "0.0.1",
+  "description": "一个方便易用的npm包,用于将HTTP请求缓存起来,以避免重复请求和提高应用程序的性.",
+  "main": "dist/reqCacher.mjs",
+  "scripts": {
+    "build": "vite build"
+  },
+  "repository": "git@github.com:zane626/cache-fetch.git",
+  "author": "zane <zzg9583@gmail.com>",
+  "keywords": [
+    "cache",
+    "cache fetch",
+    "cache requests",
+    "repeated requests"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zane626/cache-fetch/issues"
+  },
+  "homepage": "https://github.com/zane626/cache-fetch#readme",
+  "peerDependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "vite": "^4.2.1"
+  }
+}
