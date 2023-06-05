@@ -5,9 +5,10 @@
 import _ from 'lodash'
 
 export class CacheFetch {
-  constructor (cacheTime = 800) {
+  constructor (cacheTime = 800, sendKey = 'send') {
     this.cache = []
     this.cacheTime = cacheTime
+    this.sendKey = sendKey
   }
 
   fetch (options, fetch) {
@@ -26,7 +27,7 @@ export class CacheFetch {
   }
 
   createFetch (fetch, options, index) {
-    let result = fetch.send(_.cloneDeep(options))
+    let result = (this.sendKey ? fetch[this.sendKey] : fetch)(_.cloneDeep(options))
     if (typeof index === 'number') {
       this.cache[index][1] = result
     } else {

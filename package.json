@@ -1,6 +1,6 @@
 {
   "name": "req-cacher",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个方便易用的npm包,用于将HTTP请求缓存起来,以避免重复请求和提高应用程序的性.",
   "main": "dist/reqCacher.mjs",
   "scripts": {
