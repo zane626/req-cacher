@@ -14,7 +14,7 @@ export class CacheFetch {
   fetch (options, fetch) {
     let index = this.cache.findIndex(([option]) => _.isEqual(options, option))
     if (index > -1) {
-      return this.getResult(index) ? this.getResult(index) : this.createFetch(fetch, options, index)
+      return this.getResult(index) || this.createFetch(fetch, options, index)
     } else {
       return this.createFetch(fetch, options)
     }
@@ -31,7 +31,7 @@ export class CacheFetch {
     if (typeof index === 'number') {
       this.cache[index][1] = result
     } else {
-      index = this.cache.push([_.cloneDeep(options), result])
+      index = this.cache.push([_.cloneDeep(options), result]) - 1
     }
     this.timeToClear(index)
     return result
